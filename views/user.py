@@ -6,7 +6,7 @@ from dao.model.user import UserSchema
 from decorator import admin_required
 from implemented import user_service
 
-user_ns = Namespace('user')
+user_ns = Namespace('users')
 
 # Создаем экземпляры схем сериализации для одной и нескольких сущностей
 user_schema = UserSchema()
@@ -33,7 +33,7 @@ class UsersView(Resource):
         return "", 201
 
 
-# Функции API для единичного экземпляра - пользователя - /user/<int:uid>
+# Функции API для единичного экземпляра - пользователя - /users/<int:uid>
 @user_ns.route('/<int:uid>')
 class UserView(Resource):
     def get(self, uid):
